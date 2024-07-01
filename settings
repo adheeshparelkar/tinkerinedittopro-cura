@@ -1,0 +1,60 @@
+
+Printer Settings:
+
+X (Width): 215.0 mm
+Y (Depth): 160.0 mm
+Z (Height): 220.0 mm
+
+Build plate shape: Rectangular
+
+Origin at centre: False (Unchecked)
+
+Heated bed: False (Unchecked)
+
+Heated build volume: False (Unchecked)
+
+G-code flavour: Marlin
+
+
+Printhead Settings:
+
+X min: -20 mm
+Y min: -10 mm
+X max: 10 mm
+Y max: 10 mm
+Gantry Height: 220.0 mm 
+Number of Extruders: 1
+Apply Extruder offsets to G-Code: True (Checked)
+
+
+
+;Start G Code
+
+;Basic settings:; Layer height: {layer_height} ; Walls: {wall_thickness} ; Fill: {fill_density} ; Speed: {print_speed} ; Temperature: {print_temperature} ; Filament Diameter: {filament_diameter} ; Support Structures: {support} ; Support Angle: {support_angle}
+;Print time: {print_time}
+;Print weight: {filament_weight}g
+M104 S{material_print_temperature_layer_0}
+T0
+G28
+G90
+M106 S0
+G92 E0
+G1 Z0.5 F2000
+M109 S{material_print_temperature_layer_0}
+
+
+;End G-Code
+
+M104 S0
+M140 S0
+G91
+G1 Z0.2 E-4 F2000
+G4 P600
+G28 XY
+G91
+G1 Z80 F3000
+M106 S0
+M84
+G90
+
+
